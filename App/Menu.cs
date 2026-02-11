@@ -1,14 +1,18 @@
 using System;
-using GuiaEjercicios.App;
 using GuiaEjercicios.Ejercicios.Bloque1;
 
 namespace GuiaEjercicios.App
 {
+    // Menú principal del programa.
+    // Aquí el usuario elige el bloque y luego el ejercicio.
+    // El menú está en ciclo y termina cuando el usuario elige "Salir".
     public static class Menu
     {
         public static void Run()
         {
             int option;
+
+            // Ciclo principal: se repite hasta que el usuario decida salir
             do
             {
                 ConsoleUI.Clear();
@@ -22,8 +26,10 @@ namespace GuiaEjercicios.App
                 Console.WriteLine("0) Salir");
                 ConsoleUI.Line();
 
+                // Leemos opción y validamos rango
                 option = Input.ReadInt("Seleccione una opción: ", 0, 5);
 
+                // Mandamos al bloque correspondiente
                 switch (option)
                 {
                     case 1: RunBloque1(); break;
@@ -31,17 +37,19 @@ namespace GuiaEjercicios.App
                     case 3: RunBloque3(); break;
                     case 4: RunBloque4(); break;
                     case 5: RunBloque5(); break;
-                    case 0:
-                        ConsoleUI.Info("Saliendo... ¡Éxitos!");
-                        break;
                 }
 
             } while (option != 0);
+
+            ConsoleUI.Clear();
+            ConsoleUI.Info("Saliendo... ¡Éxitos!");
         }
 
         private static void RunBloque1()
         {
             int op;
+
+            // Submenú del Bloque 1
             do
             {
                 ConsoleUI.Clear();
@@ -50,68 +58,40 @@ namespace GuiaEjercicios.App
                 Console.WriteLine("1) Ejercicio 1: Calculadora de IMC");
                 Console.WriteLine("2) Ejercicio 2: Conversión de temperatura");
                 Console.WriteLine("3) Ejercicio 3: Desglose de billetes");
-                Console.WriteLine("4) Ejercicio 4: Préstamo simple");
-                Console.WriteLine("5) Ejercicio 5: Tiempo transcurrido");
-                Console.WriteLine("6) Ejercicio 6: Área y perímetro");
+                Console.WriteLine("4) Ejercicio 4: Préstamo (cuota mensual fija)");
+                Console.WriteLine("5) Ejercicio 5: Tiempo transcurrido (hh:mm:ss)");
+                Console.WriteLine("6) Ejercicio 6: Área y perímetro (menú)");
                 Console.WriteLine("7) Ejercicio 7: Unidades de almacenamiento");
-                Console.WriteLine("8) Ejercicio 8: Salario semanal");
+                Console.WriteLine("8) Ejercicio 8: Salario semanal (horas extra)");
                 Console.WriteLine("0) Volver al menú principal");
                 ConsoleUI.Line();
 
                 op = Input.ReadInt("Elija ejercicio: ", 0, 8);
 
+                // Ejecutamos el ejercicio seleccionado
                 switch (op)
                 {
                     case 1: Ejercicio01_IMC.Run(); break;
-
-                    // Por ahora, si aún no has creado estos archivos, déjalos así.
-                    // Cuando creemos cada ejercicio, solo reemplazamos el mensaje por EjercicioXX.Run().
                     case 2: Ejercicio02_Temperatura.Run(); break;
-
-
                     case 3: Ejercicio03_Billetes.Run(); break;
-
-
                     case 4: Ejercicio04_PrestamoSimple.Run(); break;
-
-
-                    case 5:
-                        ConsoleUI.Clear();
-                        ConsoleUI.Title("Ejercicio 5: Tiempo transcurrido");
-                        ConsoleUI.Info("Pendiente de implementar.");
-                        ConsoleUI.Pause();
-                        break;
-
-                    case 6:
-                        ConsoleUI.Clear();
-                        ConsoleUI.Title("Ejercicio 6: Área y perímetro");
-                        ConsoleUI.Info("Pendiente de implementar.");
-                        ConsoleUI.Pause();
-                        break;
-
-                    case 7:
-                        ConsoleUI.Clear();
-                        ConsoleUI.Title("Ejercicio 7: Unidades de almacenamiento");
-                        ConsoleUI.Info("Pendiente de implementar.");
-                        ConsoleUI.Pause();
-                        break;
-
-                    case 8:
-                        ConsoleUI.Clear();
-                        ConsoleUI.Title("Ejercicio 8: Salario semanal");
-                        ConsoleUI.Info("Pendiente de implementar.");
-                        ConsoleUI.Pause();
-                        break;
+                    case 5: Ejercicio05_TiempoTranscurrido.Run(); break;
+                    case 6: Ejercicio06_AreaPerimetro.Run(); break;
+                    case 7: Ejercicio07_Almacenamiento.Run(); break;
+                    case 8: Ejercicio08_SalarioSemanal.Run(); break;
                 }
 
             } while (op != 0);
         }
 
+        // Por ahora estos bloques quedan como "pendiente".
+        // Mañana, cuando hagamos el Bloque 2, iremos activando y conectando ejercicios.
+
         private static void RunBloque2()
         {
             ConsoleUI.Clear();
             ConsoleUI.Title("BLOQUE 2: Condicionales (9-14)");
-            ConsoleUI.Info("Bloque 2 pendiente. Primero completaremos Bloque 1 ejercicio por ejercicio.");
+            ConsoleUI.Info("Pendiente. Mañana iniciamos este bloque.");
             ConsoleUI.Pause();
         }
 
@@ -119,7 +99,7 @@ namespace GuiaEjercicios.App
         {
             ConsoleUI.Clear();
             ConsoleUI.Title("BLOQUE 3: Ciclos (15-22)");
-            ConsoleUI.Info("Bloque 3 pendiente. Primero completaremos Bloque 1.");
+            ConsoleUI.Info("Pendiente. Mañana iniciamos este bloque.");
             ConsoleUI.Pause();
         }
 
@@ -127,7 +107,7 @@ namespace GuiaEjercicios.App
         {
             ConsoleUI.Clear();
             ConsoleUI.Title("BLOQUE 4: Arreglos Unidimensionales (23-27)");
-            ConsoleUI.Info("Bloque 4 pendiente. Primero completaremos Bloque 1.");
+            ConsoleUI.Info("Pendiente. Mañana iniciamos este bloque.");
             ConsoleUI.Pause();
         }
 
@@ -135,9 +115,10 @@ namespace GuiaEjercicios.App
         {
             ConsoleUI.Clear();
             ConsoleUI.Title("BLOQUE 5: Arreglos Bidimensionales (28-30)");
-            ConsoleUI.Info("Bloque 5 pendiente. Primero completaremos Bloque 1.");
+            ConsoleUI.Info("Pendiente. Mañana iniciamos este bloque.");
             ConsoleUI.Pause();
         }
     }
 }
+
 
