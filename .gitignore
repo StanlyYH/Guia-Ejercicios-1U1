@@ -1,3 +1,15 @@
+# macOS
 .DS_Store
 
+# .NET build folders
+bin/
+obj/
 
+# Visual Studio / VS Code
+.vscode/
+.vs/
+*.user
+*.suo
+
+# Logs
+*.log
