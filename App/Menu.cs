@@ -225,15 +225,6 @@ namespace GuiaEjercicios.App
 
             } while (op != 0);
         }
-
-        // Mensaje estándar cuando un ejercicio todavía no está implementado
-        private static void Pending(int exerciseNumber)
-        {
-            ConsoleUI.Clear();
-            ConsoleUI.Title($"Ejercicio {exerciseNumber}");
-            ConsoleUI.Info("Pendiente. Lo implementaremos después.");
-            ConsoleUI.Pause();
-        }
     }
 }
 
